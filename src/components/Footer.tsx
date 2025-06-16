@@ -9,12 +9,12 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-8">
           {/* Logo et description */}
           <div className="col-span-1 md:col-span-2">
-            <div className="flex items-center space-x-2 mb-4">
+            <Link to="/" className="flex items-center space-x-2 mb-4">
               <div className="bg-forest-500 p-2 rounded-lg">
                 <GraduationCap className="h-6 w-6 text-white" />
               </div>
               <span className="text-2xl font-bold">FormationConnect</span>
-            </div>
+            </Link>
             <p className="text-brown-200 mb-6">
               La plateforme de référence pour connecter les centres de formation 
               et les particuliers dans votre région. Trouvez la formation qui vous convient 
@@ -56,7 +56,7 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/aide" className="text-brown-200 hover:text-forest-400 transition-colors">
+                <Link to="/" className="text-brown-200 hover:text-forest-400 transition-colors">
                   Centre d'aide
                 </Link>
               </li>
@@ -68,22 +68,22 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4 text-beige-100">Informations</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/about" className="text-brown-200 hover:text-forest-400 transition-colors">
+                <Link to="/" className="text-brown-200 hover:text-forest-400 transition-colors">
                   À propos
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="text-brown-200 hover:text-forest-400 transition-colors">
+                <Link to="/" className="text-brown-200 hover:text-forest-400 transition-colors">
                   Contact
                 </Link>
               </li>
               <li>
-                <Link to="/legal" className="text-brown-200 hover:text-forest-400 transition-colors">
+                <Link to="/" className="text-brown-200 hover:text-forest-400 transition-colors">
                   Mentions légales
                 </Link>
               </li>
               <li>
-                <Link to="/privacy" className="text-brown-200 hover:text-forest-400 transition-colors">
+                <Link to="/" className="text-brown-200 hover:text-forest-400 transition-colors">
                   Confidentialité
                 </Link>
               </li>

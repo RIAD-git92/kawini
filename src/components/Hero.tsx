@@ -2,8 +2,19 @@
 import { Button } from '@/components/ui/button';
 import { Search, BookOpen, Users, Target } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
+import { useNavigate } from 'react-router-dom';
 
 const Hero = () => {
+  const navigate = useNavigate();
+
+  const handleTrouverFormation = () => {
+    navigate('/formations');
+  };
+
+  const handleProposerFormations = () => {
+    navigate('/centres');
+  };
+
   return (
     <div className="bg-gradient-to-br from-beige-50 to-forest-50 py-16">
       <div className="container mx-auto px-4">
@@ -20,6 +31,7 @@ const Hero = () => {
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in">
             <Button 
+              onClick={handleTrouverFormation}
               size="lg" 
               className="bg-forest-500 hover:bg-forest-600 text-white px-8 py-3 text-lg"
             >
@@ -27,6 +39,7 @@ const Hero = () => {
               Trouver une formation
             </Button>
             <Button 
+              onClick={handleProposerFormations}
               size="lg" 
               variant="outline" 
               className="border-2 border-brown-500 text-brown-600 hover:bg-brown-50 px-8 py-3 text-lg"
