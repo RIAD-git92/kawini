@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -99,5 +100,68 @@
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-beige-100;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-forest-300 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-forest-400;
+  }
+
+  /* Line clamp utility */
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+@layer components {
+  /* Custom button variants */
+  .btn-forest {
+    @apply bg-forest-500 hover:bg-forest-600 text-white font-medium px-4 py-2 rounded-lg transition-colors;
+  }
+
+  .btn-beige {
+    @apply bg-beige-300 hover:bg-beige-400 text-brown-800 font-medium px-4 py-2 rounded-lg transition-colors;
+  }
+
+  .btn-brown {
+    @apply bg-brown-600 hover:bg-brown-700 text-white font-medium px-4 py-2 rounded-lg transition-colors;
+  }
+
+  /* Card hover effects */
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+
+  /* Input focus styles */
+  .input-forest:focus {
+    @apply border-forest-500 ring-forest-200;
   }
 }
