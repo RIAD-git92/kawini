@@ -3,9 +3,21 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { GraduationCap, Users, Menu } from 'lucide-react';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
+
+  const handleConnexion = () => {
+    // Pour l'instant, on peut rediriger vers la page des particuliers
+    navigate('/particuliers');
+  };
+
+  const handleInscription = () => {
+    // Pour l'instant, on peut rediriger vers la page des centres
+    navigate('/centres');
+  };
 
   return (
     <header className="bg-white shadow-sm border-b border-beige-200">
@@ -42,10 +54,17 @@ const Header = () => {
           </nav>
 
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="outline" className="border-forest-500 text-forest-600 hover:bg-forest-50">
+            <Button 
+              onClick={handleConnexion}
+              variant="outline" 
+              className="border-forest-500 text-forest-600 hover:bg-forest-50"
+            >
               Connexion
             </Button>
-            <Button className="bg-forest-500 hover:bg-forest-600 text-white">
+            <Button 
+              onClick={handleInscription}
+              className="bg-forest-500 hover:bg-forest-600 text-white"
+            >
               Inscription
             </Button>
           </div>
@@ -66,21 +85,43 @@ const Header = () => {
               <Link 
                 to="/centres" 
                 className="text-brown-600 hover:text-forest-600 transition-colors flex items-center space-x-1"
+                onClick={() => setIsMenuOpen(false)}
               >
                 <Users className="h-4 w-4" />
                 <span>Centres de Formation</span>
               </Link>
-              <Link to="/particuliers" className="text-brown-600 hover:text-forest-600 transition-colors">
+              <Link 
+                to="/particuliers" 
+                className="text-brown-600 hover:text-forest-600 transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
                 Particuliers
               </Link>
-              <Link to="/formations" className="text-brown-600 hover:text-forest-600 transition-colors">
+              <Link 
+                to="/formations" 
+                className="text-brown-600 hover:text-forest-600 transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
                 Formations
               </Link>
               <div className="flex flex-col space-y-2 pt-4">
-                <Button variant="outline" className="border-forest-500 text-forest-600 hover:bg-forest-50">
+                <Button 
+                  onClick={() => {
+                    handleConnexion();
+                    setIsMenuOpen(false);
+                  }}
+                  variant="outline" 
+                  className="border-forest-500 text-forest-600 hover:bg-forest-50"
+                >
                   Connexion
                 </Button>
-                <Button className="bg-forest-500 hover:bg-forest-600 text-white">
+                <Button 
+                  onClick={() => {
+                    handleInscription();
+                    setIsMenuOpen(false);
+                  }}
+                  className="bg-forest-500 hover:bg-forest-600 text-white"
+                >
                   Inscription
                 </Button>
               </div>

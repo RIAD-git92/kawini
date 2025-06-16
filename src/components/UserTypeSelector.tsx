@@ -2,8 +2,19 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { GraduationCap, User, ArrowRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const UserTypeSelector = () => {
+  const navigate = useNavigate();
+
+  const handleCentreInscription = () => {
+    navigate('/centres');
+  };
+
+  const handleParticulierInscription = () => {
+    navigate('/particuliers');
+  };
+
   return (
     <div className="py-16 bg-beige-50">
       <div className="container mx-auto px-4">
@@ -45,7 +56,10 @@ const UserTypeSelector = () => {
                   Outils de gestion intégrés
                 </li>
               </ul>
-              <Button className="w-full bg-forest-500 hover:bg-forest-600 text-white">
+              <Button 
+                onClick={handleCentreInscription}
+                className="w-full bg-forest-500 hover:bg-forest-600 text-white"
+              >
                 Inscription Centre
               </Button>
             </CardContent>
@@ -78,7 +92,10 @@ const UserTypeSelector = () => {
                   Suivi de vos candidatures
                 </li>
               </ul>
-              <Button className="w-full bg-brown-600 hover:bg-brown-700 text-white">
+              <Button 
+                onClick={handleParticulierInscription}
+                className="w-full bg-brown-600 hover:bg-brown-700 text-white"
+              >
                 Inscription Particulier
               </Button>
             </CardContent>
