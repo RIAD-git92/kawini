@@ -7,16 +7,23 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Search, MapPin, Clock, Star } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const Particuliers = () => {
+  const navigate = useNavigate();
+
+  const handleInscription = () => {
+    navigate('/inscription');
+  };
+
   const formations = [
     {
       id: 1,
       titre: "Formation Excel Avancé",
       centre: "Centre Formation Pro",
-      lieu: "Lyon",
+      lieu: "Alger",
       duree: "3 jours",
-      prix: "450€",
+      prix: "15000 DA",
       note: 4.8,
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=300&h=200&fit=crop"
     },
@@ -24,9 +31,9 @@ const Particuliers = () => {
       id: 2,
       titre: "Anglais des Affaires",
       centre: "Language Institute",
-      lieu: "Paris",
+      lieu: "Oran",
       duree: "2 mois",
-      prix: "890€",
+      prix: "25000 DA",
       note: 4.9,
       image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=300&h=200&fit=crop"
     },
@@ -34,9 +41,9 @@ const Particuliers = () => {
       id: 3,
       titre: "Développement Web",
       centre: "Tech Academy",
-      lieu: "Marseille",
+      lieu: "Constantine",
       duree: "6 mois",
-      prix: "2500€",
+      prix: "80000 DA",
       note: 4.7,
       image: "https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?w=300&h=200&fit=crop"
     }
@@ -51,11 +58,11 @@ const Particuliers = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h1 className="text-4xl font-bold text-brown-800 mb-4">
-              Trouvez votre formation idéale
+              Trouvez votre formation idéale en Algérie
             </h1>
             <p className="text-xl text-brown-600 max-w-3xl mx-auto">
               Découvrez des centaines de formations proposées par les meilleurs centres 
-              de votre région. Développez vos compétences et boostez votre carrière.
+              de formation d'Algérie. Développez vos compétences et boostez votre carrière.
             </p>
           </div>
 
@@ -76,7 +83,7 @@ const Particuliers = () => {
                     <Label htmlFor="localisation">Où ?</Label>
                     <Input 
                       id="localisation" 
-                      placeholder="Ville ou code postal"
+                      placeholder="Wilaya ou ville"
                       className="border-beige-300 focus:border-forest-500"
                     />
                   </div>
@@ -113,7 +120,7 @@ const Particuliers = () => {
       <div className="py-16">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-brown-800 text-center mb-12">
-            Formations populaires
+            Formations populaires en Algérie
           </h2>
           
           <div className="grid md:grid-cols-3 gap-8">
@@ -177,9 +184,10 @@ const Particuliers = () => {
             Prêt à commencer votre formation ?
           </h2>
           <p className="text-forest-100 text-xl mb-8 max-w-2xl mx-auto">
-            Inscrivez-vous gratuitement et accédez à notre catalogue complet de formations.
+            Inscrivez-vous gratuitement et accédez à notre catalogue complet de formations en Algérie.
           </p>
           <Button 
+            onClick={handleInscription}
             size="lg" 
             className="bg-white text-forest-600 hover:bg-beige-50 px-8 py-3 text-lg"
           >

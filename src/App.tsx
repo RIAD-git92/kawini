@@ -8,6 +8,7 @@ import Index from "./pages/Index";
 import CentresFormation from "./pages/CentresFormation";
 import Particuliers from "./pages/Particuliers";
 import Formations from "./pages/Formations";
+import Inscription from "./pages/Inscription";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -23,6 +24,7 @@ const App = () => (
           <Route path="/centres" element={<CentresFormation />} />
           <Route path="/particuliers" element={<Particuliers />} />
           <Route path="/formations" element={<Formations />} />
+          <Route path="/inscription" element={<Inscription />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
