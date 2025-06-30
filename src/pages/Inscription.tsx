@@ -60,7 +60,7 @@ const Inscription = () => {
           {step === 1 ? (
             <>
               <CardTitle className="text-2xl font-bold text-forest-600 mb-2">
-                Bienvenue à FormationConnect
+                Bienvenue à Kawini
               </CardTitle>
               <p className="text-brown-600">
                 Utilisez votre numéro de téléphone pour vous connecter.
